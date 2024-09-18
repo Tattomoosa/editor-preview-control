@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://f6nc7pcic8jp"]
+
+[ext_resource type="Script" path="res://addons/tattomoosa.editor-control-preview/src/editor_control_preview.gd" id="1_lq76c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5knt"]
+bg_color = Color(0, 0, 0, 0.368627)
+
+[node name="EditorControlPreview" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lq76c")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="LoadSelectedControlButton" type="Button" parent="PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Load Selected Control"
+
+[node name="PreviewContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h5knt")
+
+[node name="Root" type="Control" parent="PreviewContainer"]
+unique_name_in_owner = true
+layout_mode = 2
